@@ -1,0 +1,42 @@
+<?php
+/* Page that display subcategories with image and title in category page 
+ * This page is insert in "Subcategory Listing" Block 
+ * If you want to display subcategories in category page you need to
+ * go in main category settings and chose to display "block only" -> "Subcategory Listing" Block
+ * For more informations about this page email us to: contact@logiqdesign.ro
+ */
+ 
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$category = $objectManager->get('Magento\Framework\Registry')->registry('current_category'); //Get Current Category
+$subcats = $category->getChildrenCategories();
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+?>
+    <ul class="sub-cat">
+        <?php
+        foreach ($subcats as $subcat) {
+        $_category = $objectManager->create('Magento\Catalog\Model\Category')->load($subcat->getId());
+        $_outputhelper = $this->helper('Magento\Catalog\Helper\Output');
+        $subcaturl = $subcat->getUrl();
+        $_imgHtml = '';
+
+        if ($_imgUrl = $_category->getThumbnail()) {
+        $_imgHtml = '<img src="/pub/media/catalog/category/' . $_imgUrl . '" />';
+        $_imgHtml = $_outputhelper->categoryAttribute($_category, $_imgHtml, 'image');
+        /* @escapeNotVerified */} ?>
+        <div class="col-md-4"> <!-- i use bootstrap so i display subcategories on 3 columns -->
+            <li>
+                <div class="cat-image">
+                <a href="<?php echo $subcaturl ?>">
+                    <?php echo $_imgHtml;?>
+                </a>
+                </div>
+                <div class="info">
+                <h4><a href="<?php echo $subcaturl ?>">
+                    <?php echo $subcat->getName(); ?></a>
+                </h4>
+            </li>
+        </div>
+        <?php 
+        } 
+        ?>
+    </ul>
