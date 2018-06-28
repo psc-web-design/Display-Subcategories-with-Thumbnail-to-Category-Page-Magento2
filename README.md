@@ -1,5 +1,5 @@
 # Display-Subcategories-with-Thumbnail-to-Category-Page-Magento2
-This will help you display subcategories with thumbnail on category page. Tested on Magento version 2.2
+This will help you display subcategories with thumbnail on category page. **Tested on Magento 2.2.2**
 
 1. First you need to duplicate "SubcategoriesThumbnail.phtml" from repo in app/design/frontend/Theme/theme_name/Magento_Theme/templates/html/SubcategoriesThumbnail.phtml
 
@@ -9,7 +9,7 @@ This will help you display subcategories with thumbnail on category page. Tested
 
 4. Dont fogrget to add thumbnails images to subcategories before displaying them in category page
 
-5. php bin/magento setup:upgrade && php bin/magento setup:static-content:deploy -f && php bin/magento cache:flush
+5. `php bin/magento setup:upgrade && php bin/magento setup:static-content:deploy -f && php bin/magento cache:flush`
 
-For more informations about this please contact me and i will be back asap. Enjoy!
+> For more informations about this please contact me and i will be back asap. Enjoy!
    
