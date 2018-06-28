@@ -1,0 +1,4 @@
+/* Create a Block with the code from third line */
+-
+{{block class="Magento\Framework\View\Element\Template" name="displaySubcategories" template="Magento_Theme::html/displaySubcategories.phtml"}}
+-
