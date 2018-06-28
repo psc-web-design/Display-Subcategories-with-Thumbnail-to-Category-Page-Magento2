@@ -16,6 +16,5 @@ This will help you display subcategories with thumbnail on category page. **Test
 
 -
 
-> This will display subcategories with thumbnail in CategoryPage with Title and backlinks
-> For more informations about this please contact me and i will be back asap. Enjoy!
+> This will display subcategories with thumbnail in CategoryPage with Title and backlinks _ For more informations about this please contact me and i will be back asap. Enjoy! 
    
